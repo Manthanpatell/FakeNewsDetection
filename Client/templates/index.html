@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake news Detector!!</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    button {
+        color: aliceblue;
+        background-color: blue;
+    }
+
+    .Error{
+        color:red;
+    }
+    .Success{
+        color:green;
+    }
+</style>
+<body>
+    <h1>Welcome to Fake News Detector</h1>
+    <form method = "post", action = "/predict">
+        <textarea name="content" rows="12" cols="60" placeholder="Type or paste your text here" >{{message}}</textarea>
+        <div>
+            <button>
+                Check
+            </button>
+            <a href ="/">Reset</a>
+        </div>
+    </form>
+    <!-- <h2>{{result}}</h2> -->
+
+    
+
+    <!-- Apply the style based on the result -->
+    {% if result == 'Hurayyyy! News is real' %}
+        <h2 class="Success">{{result}}</h2>
+    {% elif result == 'Fake news detected!!' %}
+        <h2 class="Error">{{result}}</h2>
+    {% endif %}
+
+
+
+
+
+    <p id="result"></p>
+
+</body>
+</html>
